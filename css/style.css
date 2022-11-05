@@ -4,9 +4,17 @@
   --game-discord-borderColor: black;
   --game-discord-bgColor: #575EDC;
   --game-discord-h1Color: white;
-  --game-notification-bgShadow: 0.00px 5.00px 17px 4px rgba(20,20,20,0.47);
+  --game-notification-bgShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
   --game-notification-bgColor: White;
+  --game-groupAction-bgColor: #2A2A2A;
   --game-groupAction-borderColor: #575EDC;
+  --game-groupeAction-titleBgColor: white;
+  --game-groupeAction-titleBorderRadius: 0 0 30px 30px;
+  --game-groupeAction-h2Color: black;
+  --game-house-titleBorderRadius: 0 60px 60px 0;
+  --game-house-btnBgColor: white;
+  --game-house-btnColor: black;
+  --game-house-btnBorderRadius: ;
   --game-fuel-borderColor: black;
 }
 
@@ -33,21 +41,28 @@ body {
 
 /********************** END GENERAL **********************/
 /** IMPORT GAME STYLES **/
-#game {
+#game .interaction .fuel, #game .interaction .groupAction .houses .title-type2, #game .interaction .groupAction .houses, #game .interaction .groupAction .action .title,
+#game .interaction .groupAction .cars .title, #game .interaction, #game .player .notification, #game .player .discord, #game .player {
+  display: flex;
+  flex-direction: row;
+}
+
+#game .interaction .groupAction .action,
+#game .interaction .groupAction .cars, #game .interaction .groupAction, #game {
   display: flex;
   flex-direction: column;
+}
+
+#game {
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
   margin-top: 50px;
 }
 #game .player {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 #game .player .discord {
-  display: flex;
   flex-grow: 2;
   margin-right: 40px;
   height: 80px;
@@ -63,7 +78,6 @@ body {
   color: var(--game-discord-h1Color);
 }
 #game .player .notification {
-  display: flex;
   flex-grow: 0;
   justify-content: space-around;
   min-width: 110px;
@@ -76,37 +90,82 @@ body {
   min-height: 40px;
 }
 #game .interaction {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   margin-top: 25px;
 }
 #game .interaction .groupAction {
-  display: flex;
-  flex-direction: column;
   flex-grow: 2;
   margin-right: 25px;
 }
-#game .interaction .groupAction div {
-  margin-bottom: 25px;
+#game .interaction .groupAction .houses, #game .interaction .groupAction .action,
+#game .interaction .groupAction .cars {
   border: 2px solid var(--game-groupAction-borderColor);
   border-radius: var(--game-form-borderRadius);
+  background-color: var(--game-groupAction-bgColor);
+  margin-bottom: 25px;
 }
 #game .interaction .groupAction .action,
 #game .interaction .groupAction .cars {
-  background: red;
-  height: 50px;
+  min-height: 450px;
+}
+#game .interaction .groupAction .action .title,
+#game .interaction .groupAction .cars .title {
+  align-self: center;
+  height: 70px;
+  width: 50%;
+  border-radius: var(--game-groupeAction-titleBorderRadius);
+  background-color: var(--game-groupeAction-titleBgColor);
+}
+#game .interaction .groupAction .action .title h2,
+#game .interaction .groupAction .cars .title h2 {
+  color: var(--game-groupeAction-h2Color);
+  flex: 1;
+  text-align: center;
+  align-self: center;
 }
 #game .interaction .groupAction .houses {
-  background: green;
-  height: 20px;
+  height: 50px;
+  min-height: 100px;
+}
+#game .interaction .groupAction .houses .title-type2 {
+  height: 100%;
+  flex-grow: 1;
+  border-radius: var(--game-house-titleBorderRadius);
+  background-color: var(--game-groupeAction-titleBgColor);
+}
+#game .interaction .groupAction .houses .title-type2 h2 {
+  color: var(--game-groupeAction-h2Color);
+  flex: 1;
+  text-align: center;
+  align-self: center;
+}
+#game .interaction .groupAction .houses .group-btn {
+  display: flex;
+  flex-grow: 2;
+  justify-content: space-around;
+}
+#game .interaction .groupAction .houses .group-btn button {
+  flex: 1;
+  text-align: center;
+  align-self: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 50%;
+  background-color: var(--game-house-btnBgColor);
+  color: var(--game-house-btnColor);
+  border-radius: var(--game-house-btnBorderRadius);
+}
+#game .interaction .groupAction .houses .group-btn button:first-child {
+  margin-left: 30px;
+}
+#game .interaction .groupAction .houses .group-btn button:last-child {
+  margin-right: 30px;
 }
 #game .interaction .fuel {
-  display: flex;
   flex-grow: 0;
-  background: #b0ce05;
   width: 32px;
   height: 500px;
+  background: #b0ce05;
   border: 2px solid var(--game-fuel-borderColor);
   border-radius: var(--game-form-borderRadius);
 }

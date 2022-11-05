@@ -1,25 +1,42 @@
-:root {	
+:root {
 	// Global Variable
 	--game-form-borderRadius: 5px;
 
 
+
 	// PLAYER AREA // 
 	// Used by the Discord Area
-	--game-discord-borderColor: black; 
+	--game-discord-borderColor: black;
 	--game-discord-bgColor: #575EDC;
-	--game-discord-h1Color: white; 
+	--game-discord-h1Color: white;
+
 
 	// Used by Notification inside Player Area 
-	--game-notification-bgShadow: 0.00px 5.00px 17px 4px rgba(20,20,20,0.47);
+	--game-notification-bgShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
 	--game-notification-bgColor: White;
 	// END PLAYER AREA // 
 
-	// INTERACTION AREA // 
-	
-	// Used by groupAction inside interaction 
-	--game-groupAction-borderColor: #575EDC;
-	// Used by fuel inside interaction 
-	--game-fuel-borderColor: black; 
 
+	
+	// INTERACTION AREA // 
+	// Used by groupAction inside interaction 
+	--game-groupAction-bgColor: #2A2A2A;
+	--game-groupAction-borderColor: #575EDC;
+
+	--game-groupeAction-titleBgColor: white;
+	--game-groupeAction-titleBorderRadius: 0 0 30px 30px;
+	--game-groupeAction-h2Color: black; 
+
+
+	// Used by home inside groupAction 
+	--game-house-titleBorderRadius: 0 60px 60px 0;
+	
+	--game-house-btnBgColor: white;
+	--game-house-btnColor: black;
+	--game-house-btnBorderRadius: ;
+
+
+	// Used by fuel inside interaction 
+	--game-fuel-borderColor: black;
 	// END INTERACTION AREA // 
 }

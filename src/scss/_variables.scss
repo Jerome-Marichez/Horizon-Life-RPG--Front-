@@ -17,26 +17,27 @@
 	// END PLAYER AREA // 
 
 
-	
+
 	// INTERACTION AREA // 
 	// Used by groupAction inside interaction 
 	--game-groupAction-bgColor: #2A2A2A;
 	--game-groupAction-borderColor: #575EDC;
-
+	--game-groupAction-boxShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
 	--game-groupeAction-titleBgColor: white;
-	--game-groupeAction-titleBorderRadius: 0 0 30px 30px;
-	--game-groupeAction-h2Color: black; 
+	--game-groupeAction-titleBorderRadius: 0 0 40px 40px;
+	--game-groupeAction-h2Color: black;
 
 
 	// Used by home inside groupAction 
 	--game-house-titleBorderRadius: 0 60px 60px 0;
-	
+
 	--game-house-btnBgColor: white;
 	--game-house-btnColor: black;
-	--game-house-btnBorderRadius: ;
+	--game-house-btnBorderRadius: 25px;
 
 
 	// Used by fuel inside interaction 
 	--game-fuel-borderColor: black;
+	--game-fuel-bgcolor: black;
 	// END INTERACTION AREA // 
 }

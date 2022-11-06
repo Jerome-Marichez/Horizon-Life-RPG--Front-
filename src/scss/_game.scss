@@ -83,24 +83,26 @@
 
 			}
 
-			.action,
-			.cars {
+			%titleShared {
+				height: 70px;
+				border-radius: var(--game-groupeAction-titleBorderRadius);
+				background-color: var(--game-groupeAction-titleBgColor);
+			}
+
+			.action {
 				@extend %flexColumn;
 				@extend %cssFormShared;
 
 				min-height: 450px;
 
-				.title {
 
+
+
+				.title-action {
 					@extend %flexRow;
-
+					@extend %titleShared;
 					align-self: center;
-					height: 70px;
 					width: 50%;
-
-
-					border-radius: var(--game-groupeAction-titleBorderRadius);
-					background-color: var(--game-groupeAction-titleBgColor);
 
 					h2 {
 						color: var(--game-groupeAction-h2Color);
@@ -112,6 +114,37 @@
 
 
 
+
+
+			}
+
+
+			.cars {
+				@extend %cssFormShared;
+				min-height: 450px;
+
+				.header {
+					@extend %flexRow;
+
+					div {
+						min-width: 33.3%;
+					}
+
+					.title-cars {
+
+						@extend %flexRow;
+						@extend %titleShared;
+						width: 35%;
+
+
+						h2 {
+							color: var(--game-groupeAction-h2Color);
+							flex: 1;
+							text-align: center;
+							align-self: center;
+						}
+					}
+				}
 			}
 
 
@@ -122,7 +155,7 @@
 				height: 50px;
 				min-height: 100px;
 
-				.title-type2 {
+				.title-houses {
 					@extend %flexRow;
 					height: 100%;
 					flex-grow: 1;
@@ -152,7 +185,7 @@
 						margin-right: 15px;
 						height: 50%;
 						font-size: 18px;
-						
+
 						background-color: var(--game-house-btnBgColor);
 						color: var(--game-house-btnColor);
 						border-radius: var(--game-house-btnBorderRadius);
@@ -170,7 +203,7 @@
 						}
 
 						&:hover {
-							 filter: brightness(85%);
+							filter: brightness(85%);
 						}
 					}
 

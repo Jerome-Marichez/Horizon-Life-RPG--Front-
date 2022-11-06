@@ -44,14 +44,12 @@ body {
 
 /********************** END GENERAL **********************/
 /** IMPORT GAME STYLES **/
-#game .interaction .fuel, #game .interaction .groupAction .houses .title-type2, #game .interaction .groupAction .houses, #game .interaction .groupAction .action .title,
-#game .interaction .groupAction .cars .title, #game .interaction, #game .player .notification, #game .player .discord, #game .player {
+#game .interaction .fuel, #game .interaction .groupAction .houses .title-houses, #game .interaction .groupAction .houses, #game .interaction .groupAction .cars .header .title-cars, #game .interaction .groupAction .cars .header, #game .interaction .groupAction .action .title-action, #game .interaction, #game .player .notification, #game .player .discord, #game .player {
   display: flex;
   flex-direction: row;
 }
 
-#game .interaction .groupAction .action,
-#game .interaction .groupAction .cars, #game .interaction .groupAction, #game {
+#game .interaction .groupAction .action, #game .interaction .groupAction, #game {
   display: flex;
   flex-direction: column;
 }
@@ -100,27 +98,40 @@ body {
   flex-grow: 2;
   margin-right: 25px;
 }
-#game .interaction .groupAction .houses, #game .interaction .groupAction .action,
-#game .interaction .groupAction .cars {
+#game .interaction .groupAction .houses, #game .interaction .groupAction .cars, #game .interaction .groupAction .action {
   border-radius: var(--game-form-borderRadius);
   background-color: var(--game-groupAction-bgColor);
   margin-bottom: 25px;
   box-shadow: var(--game-groupAction-boxShadow), 0 0 0 rgba(0, 0, 0, 0.6);
 }
-#game .interaction .groupAction .action,
-#game .interaction .groupAction .cars {
-  min-height: 450px;
-}
-#game .interaction .groupAction .action .title,
-#game .interaction .groupAction .cars .title {
-  align-self: center;
+#game .interaction .groupAction .cars .header .title-cars, #game .interaction .groupAction .action .title-action {
   height: 70px;
-  width: 50%;
   border-radius: var(--game-groupeAction-titleBorderRadius);
   background-color: var(--game-groupeAction-titleBgColor);
 }
-#game .interaction .groupAction .action .title h2,
-#game .interaction .groupAction .cars .title h2 {
+#game .interaction .groupAction .action {
+  min-height: 450px;
+}
+#game .interaction .groupAction .action .title-action {
+  align-self: center;
+  width: 50%;
+}
+#game .interaction .groupAction .action .title-action h2 {
+  color: var(--game-groupeAction-h2Color);
+  flex: 1;
+  text-align: center;
+  align-self: center;
+}
+#game .interaction .groupAction .cars {
+  min-height: 450px;
+}
+#game .interaction .groupAction .cars .header div {
+  min-width: 33.3%;
+}
+#game .interaction .groupAction .cars .header .title-cars {
+  width: 35%;
+}
+#game .interaction .groupAction .cars .header .title-cars h2 {
   color: var(--game-groupeAction-h2Color);
   flex: 1;
   text-align: center;
@@ -131,13 +142,13 @@ body {
   height: 50px;
   min-height: 100px;
 }
-#game .interaction .groupAction .houses .title-type2 {
+#game .interaction .groupAction .houses .title-houses {
   height: 100%;
   flex-grow: 1;
   border-radius: var(--game-house-titleBorderRadius);
   background-color: var(--game-groupeAction-titleBgColor);
 }
-#game .interaction .groupAction .houses .title-type2 h2 {
+#game .interaction .groupAction .houses .title-houses h2 {
   color: var(--game-groupeAction-h2Color);
   flex: 1;
   text-align: center;

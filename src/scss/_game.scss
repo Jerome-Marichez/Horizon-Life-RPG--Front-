@@ -78,7 +78,7 @@
 				border-radius: var(--game-form-borderRadius);
 				background-color: var(--game-groupAction-bgColor);
 				margin-bottom: 25px;
-
+				border: 2px solid var(--game-groupAction-borderColor);
 				box-shadow: var(--game-groupAction-boxShadow), 0 0 0 rgba(0, 0, 0, .6);
 
 			}
@@ -93,8 +93,7 @@
 				@extend %flexColumn;
 				@extend %cssFormShared;
 
-				min-height: 450px;
-
+				min-height: 500px;
 
 
 
@@ -113,6 +112,40 @@
 				}
 
 
+				.list-cards {
+					@extend %flexRow;
+					justify-content: center;
+					margin-top: 50px;
+
+					.card {
+						width: 33.3%;
+						margin-left: 5%;
+						margin-right: 5%;
+
+						.mainContent {
+							border-radius: 15px 15px 0 0;
+							background: white;
+							text-align: center;
+							padding-top: 20px;
+							padding-bottom: 20px;
+
+							img {
+								text-align: center;
+								width: 30%
+							}
+						}
+
+						.title {
+							font-weight: bold;
+							background-color: lightgrey;
+							padding-top: 15px;
+							padding-bottom: 15px;
+							text-align: center;
+							border-radius: 0 0 15px 15px;
+						}
+
+					}
+				}
 
 
 
@@ -121,7 +154,7 @@
 
 			.cars {
 				@extend %cssFormShared;
-				min-height: 450px;
+				min-height: 500px;
 
 				.header {
 					@extend %flexRow;
@@ -147,6 +180,34 @@
 				}
 			}
 
+
+			.list-slides {
+				@extend %flexRow;
+				flex-grow: 1;
+				align-items: center;
+				justify-content: center;
+				margin-top: 30px;
+				margin-bottom: 15px;
+
+				.slide {
+					margin-left: 20px;
+					margin-right: 20px;
+					width: 15px;
+					height: 15px;
+					background-color: white;
+
+					border-radius: 100%;
+
+
+				}
+
+				.active {
+					width: 18px;
+					height: 18px;
+					border: 2px solid white;
+					background-color: black;
+				}
+			}
 
 			.houses {
 				@extend %flexRow;
@@ -214,8 +275,8 @@
 		.fuel {
 			@extend %flexRow;
 			flex-grow: 0;
-			width: 32px;
-			height: 1050px;
+			width: 40px;
+			height: 1150px;
 			overflow: hidden;
 			background-color: var(--game-fuel-bgcolor);
 			border: 1px solid var(--game-fuel-borderColor);
@@ -223,9 +284,9 @@
 
 			.fuelActive {
 				transform: translate(0px, 500px);
-				height: 1050px;
+				height: 1150px;
 				background: rgb(176, 206, 5);
-				width: 32px;
+				width: 40px;
 			}
 		}
 	}

@@ -323,45 +323,8 @@ body {
   width: 40px;
 }
 
-@media only screen and (max-width: 700px) {
-  #game {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  #game .interaction .groupAction .action .title-action {
-    font-size: 13px;
-  }
-  #game .interaction .groupAction .action .list-cards .card {
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-  }
-  #game .interaction .groupAction .action .list-cards .card .title {
-    font-weight: normal;
-    font-size: 13.5px;
-  }
-  #game .interaction .groupAction .vehicules .title-vehicule {
-    font-size: 13px;
-  }
-  #game .interaction .groupAction .vehicules .vehicule {
-    justify-content: space-around;
-  }
-  #game .interaction .groupAction .vehicules .vehicule .arrow {
-    display: none;
-  }
-  #game .interaction .groupAction .houses .title-houses {
-    display: none;
-  }
-  #game .interaction .groupAction .houses .group-btn button {
-    font-size: 15px;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  #game .interaction .groupAction .houses .group-btn button:first-child {
-    margin-left: 10px;
-  }
-  #game .interaction .groupAction .houses .group-btn button:last-child {
-    margin-right: 10px;
-  }
-}
+/** IMPORT GAME RESPONSIVES STYLES **/
+/* @import "_game_responsive.scss" 
+*/
 
 /*# sourceMappingURL=style.css.map */

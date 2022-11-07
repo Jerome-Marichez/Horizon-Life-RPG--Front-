@@ -10,7 +10,7 @@
   --game-groupAction-borderColor: #575EDC;
   --game-groupAction-boxShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
   --game-groupAction-titleBgColor: white;
-  --game-groupAction-titleBorderRadius: 0 0 60px 60px;
+  --game-groupAction-titleBorderRadius: 0 0 30px 30px;
   --game-groupAction-titleColor: black;
   --game-groupAction-slideColor: white;
   --game-groupAction-slideActiveColor: black;
@@ -67,6 +67,13 @@ body {
   margin-bottom: 60px;
   padding-left: 60px;
   padding-right: 60px;
+  transition: all 0.25s ease;
+}
+@media (min-width: 1400px) {
+  #game {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
 }
 #game .player {
   justify-content: space-between;
@@ -214,7 +221,7 @@ body {
   background-color: white;
   transform: scaleY(5);
   transform-origin: top;
-  transition: transform 0.25s ease-in;
+  transition: all 0.25s ease-in;
 }
 #game .interaction .groupAction .vehicules .header .group-menu .menu:hover p {
   display: inline-flex;

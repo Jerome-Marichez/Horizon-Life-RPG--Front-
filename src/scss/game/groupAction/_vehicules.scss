@@ -1,0 +1,117 @@
+.vehicules {
+	@extend %cssFormShared;
+	margin-bottom: 25px;
+	max-height: 50%;
+
+
+	.vehicule {
+		@extend %flexRow;
+
+		.arrow {
+			cursor: pointer;
+			color: var(--game-vehicule-arrowColor);
+			font-size: 60px;
+			text-decoration: none;
+			flex: 1;
+			text-align: center;
+			align-self: center;
+			transition: color 0.25s ease-in;
+
+			&:hover {
+				color: var(--game-vehicule-arrowHoverColor);
+			}
+		}
+
+		.vehiculeImg {
+			max-height: 90%;
+			max-width: 80%;
+			flex: 2;
+		}
+	}
+
+	.header {
+		@extend %flexRow;
+
+		div {
+			flex: 1;
+		}
+
+		.group-menu {
+			@extend %flexRow;
+			margin-left: 10px;
+
+			z-index: 2;
+
+			.menu {
+				display: flex;
+				cursor: pointer;
+				weight: 20px;
+				height: 20px;
+				margin-right: 10px;
+
+				div {
+					@extend %flexColumn;
+					justify-content: center;
+					transform: scaleY(0.25);
+				}
+
+				p {
+
+					flex: 1;
+					align-self: center;
+					text-align: center;
+					display: none;
+					transform: rotate(-90deg);
+				}
+
+				&:hover {
+					background-color: white;
+					transform: scaleY(5);
+					transform-origin: top;
+					transition: all 0.25s ease-in;
+
+					p {
+						display: inline-flex;
+
+					}
+
+
+				}
+			}
+
+			.choc {
+				background-color: yellow;
+			}
+
+			.teinte {
+				background-color: blue;
+			}
+
+			.aileron {
+				background-color: red;
+			}
+
+			.jantes {
+				background-color: limegreen;
+			}
+		}
+
+		.title-vehicule {
+			@extend %flexRow;
+			@extend %titleShared;
+			margin-top: -3px;
+
+			h2 {
+				padding: 5px;
+				color: var(--game-groupAction-titleColor);
+				flex: 1;
+				text-align: center;
+				align-self: center;
+			}
+		}
+	}
+
+
+
+
+}

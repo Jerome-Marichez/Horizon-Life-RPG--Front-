@@ -1,11 +1,6 @@
-/** Used to load all variables for this project about SCSS **/
-@import "_variables.scss";
+
 /** IMPORT GLOBAL CSS FOR FONTS HTML,* SELECTOR **/
 @import "_global.scss";
-/** IMPORT GAME STYLES **/
-@import "_game.scss";
 
-/** IMPORT GAME RESPONSIVES STYLES **/
-/* @import "_game_responsive.scss" 
-*/
-// GAME RESPONSIVES STYLES are dropped for now instead we use  <meta name="viewport" content="width=device-width, initial-scale=0.5"> because client don't have time or $$$ yet for that
+/** IMPORT GAME STYLES **/
+@import "./game/main.scss";

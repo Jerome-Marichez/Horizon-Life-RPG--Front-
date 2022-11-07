@@ -1,0 +1,17 @@
+.fuel {
+	@extend %flexRow;
+	flex-grow: 0;
+	width: 40px;
+
+	overflow: hidden;
+	background-color: var(--game-fuel-bgcolor);
+	border: 2px solid var(--game-fuel-borderColor);
+	border-radius: var(--game-form-borderRadius);
+
+	.fuelActive {
+		transform: translate(0px, 500px);
+
+		background: rgb(176, 206, 5);
+		width: 40px;
+	}
+}

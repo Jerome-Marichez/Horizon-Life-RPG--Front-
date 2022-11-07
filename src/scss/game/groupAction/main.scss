@@ -36,8 +36,8 @@
 	}
 
 
-	@import "./groupAction/_action.scss";
-	@import "./groupAction/_vehicules.scss";
-	@import "./groupAction/_houses.scss";
+	@import "_action.scss"; // Import first panel action 
+	@import "_vehicules.scss"; // Import 2nd panel Vehicules
+	@import "_houses.scss"; // Import last panel Houses or called "Maison" in french
 
 }

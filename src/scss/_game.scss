@@ -13,10 +13,10 @@
 #game {
 	@extend %flexColumn;
 	width: 100%;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	padding-left: 10%;
-	padding-right: 10%;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	padding-left: 60px;
+	padding-right: 60px;
 
 
 
@@ -88,8 +88,8 @@
 
 			%titleShared {
 				height: 70px;
-				border-radius: var(--game-groupeAction-titleBorderRadius);
-				background-color: var(--game-groupeAction-titleBgColor);
+				border-radius: var(--game-groupAction-titleBorderRadius);
+				background-color: var(--game-groupAction-titleBgColor);
 			}
 
 			.action {
@@ -107,7 +107,8 @@
 					width: 50%;
 
 					h2 {
-						color: var(--game-groupeAction-h2Color);
+						padding: 5px;
+						color: var(--game-groupAction-titleColor);
 						flex: 1;
 						text-align: center;
 						align-self: center;
@@ -122,13 +123,13 @@
 
 					.card {
 						max-width: 250px;
-						width: 33.3%;
+						flex: 1;
 						margin-left: 5%;
 						margin-right: 5%;
 
 						.mainContent {
 							border-radius: 15px 15px 0 0;
-							background: white;
+							background: var(--game-card-mainContent-BgColor);
 							text-align: center;
 							padding-top: 20px;
 							padding-bottom: 20px;
@@ -141,7 +142,8 @@
 
 						.title {
 							font-weight: bold;
-							background-color: lightgrey;
+							color: var(--game-card-title-Color);
+							background-color: var(--game-card-title-BgColor);
 							padding-top: 15px;
 							padding-bottom: 15px;
 							text-align: center;
@@ -159,23 +161,109 @@
 			.vehicules {
 				@extend %cssFormShared;
 				margin-bottom: 25px;
+				max-height: 50%;
+
+
+				.vehicule {
+					@extend %flexRow;
+
+					.arrow {
+						cursor: pointer;
+						color: var(--game-vehicule-arrowColor);
+						font-size: 60px;
+						text-decoration: none;
+						flex: 1;
+						text-align: center;
+						align-self: center;
+						transition: color 0.25s ease-in;
+
+						&:hover {
+							color: var(--game-vehicule-arrowHoverColor);
+						}
+					}
+
+					.vehiculeImg {
+						max-height: 90%;
+						max-width: 80%;
+						flex: 2;
+					}
+				}
 
 				.header {
 					@extend %flexRow;
 
 					div {
-						min-width: 33.3%;
+						flex: 1;
 					}
 
-					.title-cars {
+					.group-menu {
+						@extend %flexRow;
+						margin-left: 10px;
 
+						z-index: 2;
+
+						.menu {
+							display: flex;
+							cursor: pointer;
+							weight: 20px;
+							height: 20px;
+							margin-right: 10px;
+							
+							div {
+								@extend %flexColumn;
+								justify-content: center;
+								transform: scaleY(0.25);
+							}
+
+							p {
+								
+								flex: 1;
+								align-self: center;
+								text-align: center;
+								display: none;
+								transform: rotate(-90deg);
+							}
+
+							&:hover {	
+								background-color: white;
+								transform: scaleY(5);
+								transform-origin: top;
+								transition: transform 0.25s ease-in;
+								
+								p {
+									display: inline-flex;
+
+								}
+
+								
+							}
+						}
+
+						.choc {
+							background-color: yellow;
+						}
+
+						.teinte {
+							background-color: blue;
+						}
+
+						.aileron {
+							background-color: red;
+						}
+
+						.jantes {
+							background-color: limegreen;
+						}
+					}
+
+					.title-vehicule {
 						@extend %flexRow;
 						@extend %titleShared;
-						width: 35%;
 
 
 						h2 {
-							color: var(--game-groupeAction-h2Color);
+							padding: 5px;
+							color: var(--game-groupAction-titleColor);
 							flex: 1;
 							text-align: center;
 							align-self: center;
@@ -184,30 +272,8 @@
 				}
 
 
-				.vehicule {
-					@extend %flexRow;
-					margin-top: 50px;
 
-					.arrow {
-						cursor: pointer; 
-						color: white;
-						font-size: 60px;
-						text-decoration: none;
-						flex: 1;
-						text-align: center;
-						align-self: center;
 
-						&:hover {
-							 color: grey;
-						}
-					}
-
-					.carImg {
-						max-height: 500px;
-						flex: 3;
-					}
-
-				}
 			}
 
 
@@ -225,7 +291,7 @@
 					margin-right: 20px;
 					width: 15px;
 					height: 15px;
-					background-color: white;
+					background-color: var(--game-groupAction-slideColor);
 
 					border-radius: 100%;
 
@@ -235,8 +301,8 @@
 				.active {
 					width: 18px;
 					height: 18px;
-					border: 2px solid white;
-					background-color: black;
+					border: 2px solid var(--game-groupAction-slideColor);
+					background-color: var(--game-groupAction-slideActiveColor);
 				}
 			}
 
@@ -253,10 +319,10 @@
 					flex-grow: 1;
 
 					border-radius: var(--game-house-titleBorderRadius);
-					background-color: var(--game-groupeAction-titleBgColor);
+					background-color: var(--game-groupAction-titleBgColor);
 
 					h2 {
-						color: var(--game-groupeAction-h2Color);
+						color: var(--game-groupAction-h2Color);
 						flex: 1;
 						text-align: center;
 						align-self: center;
@@ -358,9 +424,19 @@
 				}
 			}
 
-			.cars {
-				.title-cars {
+			.vehicules {
+				.title-vehicule {
 					font-size: 13px;
+
+
+				}
+
+				.vehicule {
+					justify-content: space-around;
+
+					.arrow {
+						display: none;
+					}
 				}
 			}
 

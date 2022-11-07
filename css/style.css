@@ -9,9 +9,16 @@
   --game-groupAction-bgColor: #2A2A2A;
   --game-groupAction-borderColor: #575EDC;
   --game-groupAction-boxShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
-  --game-groupeAction-titleBgColor: white;
-  --game-groupeAction-titleBorderRadius: 0 0 60px 60px;
-  --game-groupeAction-h2Color: black;
+  --game-groupAction-titleBgColor: white;
+  --game-groupAction-titleBorderRadius: 0 0 60px 60px;
+  --game-groupAction-titleColor: black;
+  --game-groupAction-slideColor: white;
+  --game-groupAction-slideActiveColor: black;
+  --game-card-mainContent-BgColor: white;
+  --game-card-title-BgColor: lightgrey;
+  --game-card-title-Color: black;
+  --game-vehicule-arrowColor: white;
+  --game-vehicule-arrowHoverColor: grey;
   --game-house-titleBorderRadius: 0 60px 60px 0;
   --game-house-btnBgColor: white;
   --game-house-btnColor: black;
@@ -44,22 +51,22 @@ body {
 
 /********************** END GENERAL **********************/
 /** IMPORT GAME STYLES **/
-#game .interaction .fuel, #game .interaction .groupAction .houses .title-houses, #game .interaction .groupAction .houses, #game .interaction .groupAction .list-slides, #game .interaction .groupAction .vehicules .vehicule, #game .interaction .groupAction .vehicules .header .title-cars, #game .interaction .groupAction .vehicules .header, #game .interaction .groupAction .action .list-cards, #game .interaction .groupAction .action .title-action, #game .interaction, #game .player .notification, #game .player .discord, #game .player {
+#game .interaction .fuel, #game .interaction .groupAction .houses .title-houses, #game .interaction .groupAction .houses, #game .interaction .groupAction .list-slides, #game .interaction .groupAction .vehicules .header .title-vehicule, #game .interaction .groupAction .vehicules .header .group-menu, #game .interaction .groupAction .vehicules .header, #game .interaction .groupAction .vehicules .vehicule, #game .interaction .groupAction .action .list-cards, #game .interaction .groupAction .action .title-action, #game .interaction, #game .player .notification, #game .player .discord, #game .player {
   display: flex;
   flex-direction: row;
 }
 
-#game .interaction .groupAction .action, #game .interaction .groupAction, #game {
+#game .interaction .groupAction .vehicules .header .group-menu .menu div, #game .interaction .groupAction .action, #game .interaction .groupAction, #game {
   display: flex;
   flex-direction: column;
 }
 
 #game {
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding-left: 10%;
-  padding-right: 10%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 #game .player {
   justify-content: space-between;
@@ -105,10 +112,10 @@ body {
   border: 2px solid var(--game-groupAction-borderColor);
   box-shadow: var(--game-groupAction-boxShadow), 0 0 0 rgba(0, 0, 0, 0.6);
 }
-#game .interaction .groupAction .vehicules .header .title-cars, #game .interaction .groupAction .action .title-action {
+#game .interaction .groupAction .vehicules .header .title-vehicule, #game .interaction .groupAction .action .title-action {
   height: 70px;
-  border-radius: var(--game-groupeAction-titleBorderRadius);
-  background-color: var(--game-groupeAction-titleBgColor);
+  border-radius: var(--game-groupAction-titleBorderRadius);
+  background-color: var(--game-groupAction-titleBgColor);
 }
 #game .interaction .groupAction .action {
   margin-bottom: 25px;
@@ -119,7 +126,8 @@ body {
   width: 50%;
 }
 #game .interaction .groupAction .action .title-action h2 {
-  color: var(--game-groupeAction-h2Color);
+  padding: 5px;
+  color: var(--game-groupAction-titleColor);
   flex: 1;
   text-align: center;
   align-self: center;
@@ -130,13 +138,13 @@ body {
 }
 #game .interaction .groupAction .action .list-cards .card {
   max-width: 250px;
-  width: 33.3%;
+  flex: 1;
   margin-left: 5%;
   margin-right: 5%;
 }
 #game .interaction .groupAction .action .list-cards .card .mainContent {
   border-radius: 15px 15px 0 0;
-  background: white;
+  background: var(--game-card-mainContent-BgColor);
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -147,7 +155,8 @@ body {
 }
 #game .interaction .groupAction .action .list-cards .card .title {
   font-weight: bold;
-  background-color: lightgrey;
+  color: var(--game-card-title-Color);
+  background-color: var(--game-card-title-BgColor);
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
@@ -155,37 +164,78 @@ body {
 }
 #game .interaction .groupAction .vehicules {
   margin-bottom: 25px;
-}
-#game .interaction .groupAction .vehicules .header div {
-  min-width: 33.3%;
-}
-#game .interaction .groupAction .vehicules .header .title-cars {
-  width: 35%;
-}
-#game .interaction .groupAction .vehicules .header .title-cars h2 {
-  color: var(--game-groupeAction-h2Color);
-  flex: 1;
-  text-align: center;
-  align-self: center;
-}
-#game .interaction .groupAction .vehicules .vehicule {
-  margin-top: 50px;
+  max-height: 50%;
 }
 #game .interaction .groupAction .vehicules .vehicule .arrow {
   cursor: pointer;
-  color: white;
+  color: var(--game-vehicule-arrowColor);
   font-size: 60px;
   text-decoration: none;
   flex: 1;
   text-align: center;
   align-self: center;
+  transition: color 0.25s ease-in;
 }
 #game .interaction .groupAction .vehicules .vehicule .arrow:hover {
-  color: grey;
+  color: var(--game-vehicule-arrowHoverColor);
 }
-#game .interaction .groupAction .vehicules .vehicule .carImg {
-  max-height: 500px;
-  flex: 3;
+#game .interaction .groupAction .vehicules .vehicule .vehiculeImg {
+  max-height: 90%;
+  max-width: 80%;
+  flex: 2;
+}
+#game .interaction .groupAction .vehicules .header div {
+  flex: 1;
+}
+#game .interaction .groupAction .vehicules .header .group-menu {
+  margin-left: 10px;
+  z-index: 2;
+}
+#game .interaction .groupAction .vehicules .header .group-menu .menu {
+  display: flex;
+  cursor: pointer;
+  weight: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+#game .interaction .groupAction .vehicules .header .group-menu .menu div {
+  justify-content: center;
+  transform: scaleY(0.25);
+}
+#game .interaction .groupAction .vehicules .header .group-menu .menu p {
+  flex: 1;
+  align-self: center;
+  text-align: center;
+  display: none;
+  transform: rotate(-90deg);
+}
+#game .interaction .groupAction .vehicules .header .group-menu .menu:hover {
+  background-color: white;
+  transform: scaleY(5);
+  transform-origin: top;
+  transition: transform 0.25s ease-in;
+}
+#game .interaction .groupAction .vehicules .header .group-menu .menu:hover p {
+  display: inline-flex;
+}
+#game .interaction .groupAction .vehicules .header .group-menu .choc {
+  background-color: yellow;
+}
+#game .interaction .groupAction .vehicules .header .group-menu .teinte {
+  background-color: blue;
+}
+#game .interaction .groupAction .vehicules .header .group-menu .aileron {
+  background-color: red;
+}
+#game .interaction .groupAction .vehicules .header .group-menu .jantes {
+  background-color: limegreen;
+}
+#game .interaction .groupAction .vehicules .header .title-vehicule h2 {
+  padding: 5px;
+  color: var(--game-groupAction-titleColor);
+  flex: 1;
+  text-align: center;
+  align-self: center;
 }
 #game .interaction .groupAction .list-slides {
   flex-grow: 1;
@@ -200,14 +250,14 @@ body {
   margin-right: 20px;
   width: 15px;
   height: 15px;
-  background-color: white;
+  background-color: var(--game-groupAction-slideColor);
   border-radius: 100%;
 }
 #game .interaction .groupAction .list-slides .active {
   width: 18px;
   height: 18px;
-  border: 2px solid white;
-  background-color: black;
+  border: 2px solid var(--game-groupAction-slideColor);
+  background-color: var(--game-groupAction-slideActiveColor);
 }
 #game .interaction .groupAction .houses {
   border: 2px solid var(--game-groupAction-borderColor);
@@ -218,10 +268,10 @@ body {
   height: 100%;
   flex-grow: 1;
   border-radius: var(--game-house-titleBorderRadius);
-  background-color: var(--game-groupeAction-titleBgColor);
+  background-color: var(--game-groupAction-titleBgColor);
 }
 #game .interaction .groupAction .houses .title-houses h2 {
-  color: var(--game-groupeAction-h2Color);
+  color: var(--game-groupAction-h2Color);
   flex: 1;
   text-align: center;
   align-self: center;
@@ -285,8 +335,14 @@ body {
     font-weight: normal;
     font-size: 13.5px;
   }
-  #game .interaction .groupAction .cars .title-cars {
+  #game .interaction .groupAction .vehicules .title-vehicule {
     font-size: 13px;
+  }
+  #game .interaction .groupAction .vehicules .vehicule {
+    justify-content: space-around;
+  }
+  #game .interaction .groupAction .vehicules .vehicule .arrow {
+    display: none;
   }
   #game .interaction .groupAction .houses .title-houses {
     display: none;

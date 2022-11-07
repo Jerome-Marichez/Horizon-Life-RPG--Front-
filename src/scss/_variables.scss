@@ -18,26 +18,46 @@
 
 
 
-	// INTERACTION AREA // 
-	// Used by groupAction inside interaction 
+	// GROUPACTION AREA // 
 	--game-groupAction-bgColor: #2A2A2A;
 	--game-groupAction-borderColor: #575EDC;
 	--game-groupAction-boxShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
-	--game-groupeAction-titleBgColor: white;
-	--game-groupeAction-titleBorderRadius: 0 0 60px 60px;
-	--game-groupeAction-h2Color: black;
+	--game-groupAction-titleBgColor: white;
+	--game-groupAction-titleBorderRadius: 0 0 60px 60px;
+	--game-groupAction-titleColor: black;
+	--game-groupAction-slideColor: white; 
+	--game-groupAction-slideActiveColor: black; 
+	// END GROUPACTION AREA // 
 
 
-	// Used by home inside groupAction 
+
+	//  ACTION AREA // 
+	--game-card-mainContent-BgColor: white;
+	--game-card-title-BgColor: lightgrey;
+	--game-card-title-Color: black;
+	// END ACTION AREA // 
+
+
+
+	// VEHICULES AREA // 
+	--game-vehicule-arrowColor: white; 
+	--game-vehicule-arrowHoverColor: grey; 
+	// END VEHICULES AREA//
+
+
+
+	// HOUSES AREA // 
 	--game-house-titleBorderRadius: 0 60px 60px 0;
 
 	--game-house-btnBgColor: white;
 	--game-house-btnColor: black;
 	--game-house-btnBorderRadius: 25px;
+	// END HOUSES AREA // 
 
 
-	// Used by fuel inside interaction 
+
+	// FUEL AREA //  
 	--game-fuel-borderColor: black;
 	--game-fuel-bgcolor: black;
-	// END INTERACTION AREA // 
+	// END FUEL AREA // 
 }

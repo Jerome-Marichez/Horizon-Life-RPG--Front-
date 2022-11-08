@@ -8,20 +8,32 @@
 	border: 2px solid var(--game-fuel-borderColor);
 	border-radius: var(--game-form-borderRadius);
 
+	&:hover {
+		.fuelActive {
+			transform: translate(0px, 550px);
+		}
+	}
+
 	.fuelActive {
 		display: flex;
 		justify-content: center;
 
-		transform: translate(0px, 0px);
-		background-image: linear-gradient(red, yellow, green);
 		width: 36px;
+		transform: translate(0px, 1300px);
+		background-image: linear-gradient(red, yellow, green);
+		transition: transform 1s ease-in;
+
+
 	}
+
+
 
 	.percentage {
 		display: flex;
 		align-self: center;
 		text-align: center;
 
+		margin-bottom: 550px;
 		font-size: 22px;
 		font-weight: bold;
 		margin-top: 0;

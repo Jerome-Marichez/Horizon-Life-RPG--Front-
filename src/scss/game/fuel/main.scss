@@ -1,4 +1,9 @@
 .fuel {
+
+	/* TODO BEHAVIOR MODIFY SPEED WAVE WHEN MOVE AND NOT HOUSE OVER
+	ANIMATION RANDOM NUMBER WHEN MOVE AND NOT HOUSE OVER 
+	**/ 
+	
 	@extend %flexRow;
 	flex-grow: 0;
 	width: 36px;
@@ -10,7 +15,11 @@
 
 	&:hover {
 		.fuelActive {
-			transform: translate(0px, 550px);
+			transform: translate(0px, 1280px);
+		}
+
+		.fuelActive::before {
+			animation: waveAnimation 1s linear infinite;
 		}
 	}
 
@@ -19,21 +28,47 @@
 		justify-content: center;
 
 		width: 36px;
-		transform: translate(0px, 1300px);
+		transform: translate(0px, 550px);
 		background-image: linear-gradient(red, yellow, green);
-		transition: transform 1s ease-in;
+		transition: transform 2s ease-in;
 
+		&:before {
+			content: '';
+			width: 200%;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			height: 40px;
+			transform: translate(-50%, -75%);
+			background: #000;
+			animation: waveAnimation 5s linear infinite;
+
+			border-radius: 45%;
+
+		}
+
+
+
+
+
+		@keyframes waveAnimation {
+			0% {
+				transform: translate(-50%, -75%) rotate(0deg);
+			}
+
+			100% {
+				transform: translate(-50%, -75%) rotate(360deg);
+			}
+		}
 
 	}
-
-
 
 	.percentage {
 		display: flex;
 		align-self: center;
 		text-align: center;
 
-		margin-bottom: 550px;
+		margin-bottom: 600px;
 		font-size: 22px;
 		font-weight: bold;
 		margin-top: 0;

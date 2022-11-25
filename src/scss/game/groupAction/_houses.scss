@@ -1,3 +1,5 @@
+@use "../placeholder"; // Global PlaceHolder
+
 .houses {
 	@extend %flexRow;
 	@extend %cssFormShared;

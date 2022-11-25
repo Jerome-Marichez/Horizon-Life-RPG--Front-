@@ -1,3 +1,5 @@
+@use "../placeholder"; // Global PlaceHolder
+
 .action {
 	@extend %flexColumn;
 	@extend %cssFormShared;
@@ -49,7 +51,7 @@
 
 			.title {
 				font-weight: bold;
-				
+
 				color: var(--game-card-title-Color);
 				background-color: var(--game-card-title-BgColor);
 				padding-top: 15px;

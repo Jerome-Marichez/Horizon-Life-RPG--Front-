@@ -1,8 +1,44 @@
+@use "../placeholder"; // Global PlaceHolder
+
 .vehicules {
 	@extend %cssFormShared;
 	margin-bottom: 25px;
 	max-height: 50%;
 
+
+	.list-slides {
+		position: absolute;
+	}
+
+	&:hover {
+		.list-slides {
+			transition: all 0.5s ease;
+			opacity: 0;
+			height: 0;
+		}
+
+		.header {
+			.container-custom {
+				transition: all 0.5s ease;
+				opacity: 1;
+			}
+
+			.container-reference {
+				transition: all 0.5s ease;
+				opacity: 1;
+			}
+		}
+
+		.group-upgrade {
+			background-color: white;
+			transition: all 0.5s ease;
+			opacity: 1;
+
+			button {
+				opacity: 1;
+			}
+		}
+	}
 
 
 	.header {
@@ -12,33 +48,43 @@
 			flex: 1;
 		}
 
+
 		.container-custom {
 			@extend %flexColumn;
 			margin-left: 10px;
+			opacity: 0;
+			z-index: 1;
+			transition: all 0.5s ease;
 
-			z-index: 2;
 
 			.group-custom {
 				@extend %flexRow;
 
+				&:first-child {
+					margin-bottom: -20px;
+				}
+
 				.custom {
-					display: flex;
+					@extend %flexColumn;
+					justify-content: center;
+
 					cursor: pointer;
 					max-width: 35px;
 					max-height: 13px;
 					margin-right: 10px;
 					margin-top: 10px;
 
+					transition: all 0.75s ease;
 
 					>div {
 						@extend %flexColumn;
-						justify-content: center;
-
-						transform: scaleY(0.25);
+						width: 100px;
+						padding-bottom: 3px;
+						transform: scaleY(0.125);
 					}
 
 					p {
-
+						transition: all 0.75s ease;
 						flex: 1;
 						align-self: center;
 						text-align: center;
@@ -47,19 +93,23 @@
 					}
 
 					&:hover {
+						z-index: 2;
+						align-items: center;
+						max-width: 35px;
 						background-color: white;
-						transform: scaleY(5);
+						transform: scaleY(10);
 						transform-origin: top;
-						transition: all 0.25s ease-in;
+
 
 						p {
 							display: inline-flex;
-
 						}
 
 
 					}
 				}
+
+
 
 				.choc {
 					background-color: yellow;
@@ -77,8 +127,51 @@
 					background-color: limegreen;
 				}
 
+
 			}
 
+
+
+		}
+
+
+		.container-reference {
+			opacity: 0;
+			display: flex;
+			flex-direction: row-reverse;
+			transition: all 0.5s ease;
+
+			.reference {
+
+				@extend %flexColumn;
+				position: absolute;
+				margin-top: 10px;
+				margin-right: 10px;
+				background-color: white;
+				justify-content: center;
+				transition: all 0.75s ease;
+				width: 12px;
+				min-height: 75px;
+				cursor: pointer;
+				overflow: hidden;
+
+				p {
+					transition: all 1.5s ease;
+					align-self: center;
+
+
+					opacity: 0;
+				}
+
+				&:hover {
+					width: 10%;
+					border-radius: 15px 0px 0px 15px;
+
+					p {
+						opacity: 1;
+					}
+				}
+			}
 		}
 
 		.title-vehicule {
@@ -94,6 +187,9 @@
 				align-self: center;
 			}
 		}
+
+
+
 	}
 
 
@@ -123,5 +219,58 @@
 	}
 
 
+	.group-upgrade {
+		min-height: 100px;
+		transition: all 0.5s ease;
+		
+		display: flex;
+		justify-content: space-around;
+		background-color: transparent;
+		border-radius: 0px 0px 5px 5px;
+		button {
+			opacity: 0;
+
+			align-self: center;
+			min-height: 50px;
+
+			text-transform: uppercase;
+			max-width: 200px;
+			flex: 1;
+			text-align: center;
+			align-self: center;
+			margin-left: 15px;
+			margin-right: 15px;
+			height: 50%;
+			font-size: 18px;
+			border: 2px solid black;
+			border-radius: var(--game-house-btnBorderRadius);
+			cursor: pointer;
+			transition: all 0.25s ease-in;
+
+			&:hover {
+				filter: brightness(85%);
+			}
+
+		}
+
+
+		.reparer {
+			background-color: grey;
+		}
+
+		.ameilorer {
+			background-color: red;
+		}
+
+		.customiser {
+			background-color: yellow;
+		}
+
+		.vendre {
+			background-color: limegreen;
+		}
+
+
+	}
 
 }

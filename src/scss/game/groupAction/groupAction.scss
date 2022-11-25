@@ -1,3 +1,8 @@
+@use "../placeholder"; // Global PlaceHolder
+@use "_action.scss"; // Import first panel action 
+@use "_vehicules.scss"; // Import 2nd panel Vehicules
+@use "_houses.scss"; // Import last panel Houses or called "Maison" in french
+
 .groupAction {
 	@extend %flexColumn;
 
@@ -8,6 +13,7 @@
 
 	.list-slides {
 		@extend %flexRow;
+
 		flex-grow: 1;
 		align-items: center;
 		justify-content: center;
@@ -36,8 +42,6 @@
 	}
 
 
-	@import "_action.scss"; // Import first panel action 
-	@import "_vehicules.scss"; // Import 2nd panel Vehicules
-	@import "_houses.scss"; // Import last panel Houses or called "Maison" in french
+
 
 }

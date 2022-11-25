@@ -1,12 +1,24 @@
 /** IMPORT GLOBAL CSS FOR FONTS HTML,* SELECTOR **/
-@import "../global.scss";
+@use "../global.scss";
+
 /** IMPORT VARIABLES used only for this game **/
-@import "_variables.scss";
+@use "_variables.scss";
+
 /** IMPORT PLACEHOLDER used only for this game **/
-@import "_placeholder.scss";
+@use "_placeholder.scss";
+
+/** SCSS Used inside #game */
+@use "./player/player.scss";
+
+/** SCSS used inside groupAction Folder **/
+@use "./groupAction/groupAction.scss";
+/** SCSS used inside Fuel Folder **/
+@use "./fuel/fuel.scss";
+
+
 /* @import "_responsive.scss" 
 */
-// GAME RESPONSIVES STYLES are dropped for now instead we use  <meta name="viewport" content="width=device-width, initial-scale=0.5"> since client don't have time or $$$ yet for that
+// GAME RESPONSIVES STYLES are dropped for now instead we use  <meta name="viewport" content="width=device-width, initial-scale=0.5"> */
 
 
 
@@ -27,6 +39,7 @@
 		padding-left: 15%;
 		padding-right: 15%;
 	}
+
 	@media (min-width: 2000px) {
 		padding-left: 20%;
 		padding-right: 20%;
@@ -34,15 +47,11 @@
 
 
 
-	@import "./player/main.scss";
 
 	.interaction {
 		@extend %flexRow;
 		justify-content: space-between;
 		margin-top: 25px;
-
-		@import "./groupAction/main.scss";
-		@import "./fuel/main.scss";
 	}
 
 

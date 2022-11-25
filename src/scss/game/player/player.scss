@@ -1,0 +1,8 @@
+@use "../placeholder"; // Global PlaceHolder
+@use "_discord.scss"; // Discord Header
+@use "_notification.scss"; // Notification Scss
+
+.player {
+	@extend %flexRow;
+	justify-content: space-between;
+}

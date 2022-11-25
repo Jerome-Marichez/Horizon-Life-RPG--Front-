@@ -1,9 +1,11 @@
+@use "../placeholder"; // Global PlaceHolder
+
 .fuel {
 
 	/* TODO BEHAVIOR MODIFY SPEED WAVE WHEN MOVE AND NOT HOUSE OVER
 	ANIMATION RANDOM NUMBER WHEN MOVE AND NOT HOUSE OVER 
-	**/ 
-	
+	**/
+
 	@extend %flexRow;
 	flex-grow: 0;
 	width: 36px;
@@ -42,14 +44,9 @@
 			transform: translate(-50%, -75%);
 			background: #000;
 			animation: waveAnimation 5s linear infinite;
-
 			border-radius: 45%;
 
 		}
-
-
-
-
 
 		@keyframes waveAnimation {
 			0% {

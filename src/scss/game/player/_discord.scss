@@ -1,0 +1,22 @@
+@use "../placeholder"; // Global PlaceHolder
+
+.discord {
+	@extend %flexRow;
+	flex: 2;
+	margin-right: 40px;
+	height: 80px;
+
+
+	border-radius: var(--game-form-borderRadius);
+	border: 2px solid var(--game-discord-borderColor);
+	background-color: var(--game-discord-bgColor);
+
+	h1 {
+		font-size: 30px;
+		flex: 1;
+		text-align: center;
+		align-self: center;
+		color: var(--game-discord-h1Color);
+	}
+
+}

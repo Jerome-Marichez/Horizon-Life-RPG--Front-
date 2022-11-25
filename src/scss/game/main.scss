@@ -8,10 +8,11 @@
 @use "_placeholder.scss";
 
 /** SCSS Used inside #game */
-@use "./player/player.scss";
+@use "./player/header.scss";
 
 /** SCSS used inside groupAction Folder **/
 @use "./groupAction/groupAction.scss";
+
 /** SCSS used inside Fuel Folder **/
 @use "./fuel/fuel.scss";
 

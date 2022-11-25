@@ -12,9 +12,10 @@
 
 	&:hover {
 		.list-slides {
-			transition: all 0.5s ease;
+			transition: all 0.25s ease;
 			opacity: 0;
 			height: 0;
+			cursor: none;
 		}
 
 		.header {
@@ -30,6 +31,7 @@
 		}
 
 		.group-upgrade {
+			min-height: 100px;
 			background-color: white;
 			transition: all 0.5s ease;
 			opacity: 1;
@@ -220,14 +222,16 @@
 
 
 	.group-upgrade {
-		min-height: 100px;
+		min-height: 70px;
 		transition: all 0.5s ease;
-		
+
 		display: flex;
 		justify-content: space-around;
 		background-color: transparent;
 		border-radius: 0px 0px 5px 5px;
+
 		button {
+
 			opacity: 0;
 
 			align-self: center;

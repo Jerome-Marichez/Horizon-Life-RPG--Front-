@@ -1,6 +1,6 @@
 @use "../placeholder"; // Global PlaceHolder
 @use "_discord.scss"; // Discord Header
-@use "_notification.scss"; // Notification Scss
+@use "_notification.scss"; // Notification Icon
 
 .player {
 	@extend %flexRow;

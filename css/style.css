@@ -1,17 +1,525 @@
-/* Error: Can't find stylesheet to import.
- *    ,
- * 11 | @use "./player/header.scss";
- *    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   src\scss\game\main.scss 11:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 11 \2502  @use \"./player/header.scss\";\d\a    \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   src\\scss\\game\\main.scss 11:1  root stylesheet";
+/********************** GENERAL **********************/
+html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  animation: 1s ease-in forwards fade-in;
+  font-family: Helvetica;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/********************** END GENERAL **********************/
+:root {
+  --game-form-borderRadius: 8px;
+  --game-discord-borderColor: black;
+  --game-discord-bgColor: #575EDC;
+  --game-discord-h1Color: white;
+  --game-notification-bgShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
+  --game-notification-bgColor: White;
+  --game-groupAction-bgColor: #2A2A2A;
+  --game-groupAction-borderColor: #575EDC;
+  --game-groupAction-boxShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
+  --game-groupAction-titleBgColor: white;
+  --game-groupAction-titleBorderRadius: 0 0 30px 30px;
+  --game-groupAction-titleColor: black;
+  --game-groupAction-slideColor: white;
+  --game-groupAction-slideActiveColor: black;
+  --game-card-mainContent-BgColor: white;
+  --game-card-title-BgColor: lightgrey;
+  --game-card-title-Color: black;
+  --game-vehicule-arrowColor: white;
+  --game-vehicule-arrowHoverColor: grey;
+  --game-house-titleBorderRadius: 8px 60px 60px 8px;
+  --game-house-btnBgColor: white;
+  --game-house-btnColor: black;
+  --game-house-btnBorderRadius: 25px;
+  --game-fuel-borderColor: black;
+  --game-fuel-bgcolor: black;
+}
+
+#game .interaction, .fuel, .groupAction .list-slides, .houses, .houses .title-houses, .vehicules .header, .vehicules .header .container-custom .group-custom, .vehicules .header .title-vehicule, .vehicules .vehicule, .action .title-action, .action .list-cards, .header, .notification, .discord {
+  display: flex;
+  flex-direction: row;
+}
+
+#game, .groupAction, .vehicules .header .container-custom, .vehicules .header .container-custom .group-custom .custom, .vehicules .header .container-custom .group-custom .custom > div, .vehicules .header .container-reference .reference, .action {
+  display: flex;
+  flex-direction: column;
+}
+
+.houses, .vehicules, .action {
+  border-radius: var(--game-form-borderRadius);
+  background-color: var(--game-groupAction-bgColor);
+  border: 3px solid var(--game-groupAction-borderColor);
+  box-shadow: var(--game-groupAction-boxShadow), 0 0 0 rgba(0, 0, 0, 0.6);
+}
+
+.vehicules .header .title-vehicule, .action .title-action {
+  height: 70px;
+  border-radius: var(--game-groupAction-titleBorderRadius);
+  background-color: var(--game-groupAction-titleBgColor);
+}
+
+.discord {
+  flex: 2;
+  margin-right: 40px;
+  height: 80px;
+  border-radius: var(--game-form-borderRadius);
+  border: 2px solid var(--game-discord-borderColor);
+  background-color: var(--game-discord-bgColor);
+}
+.discord h1 {
+  font-size: 30px;
+  flex: 1;
+  text-align: center;
+  align-self: center;
+  color: var(--game-discord-h1Color);
+}
+
+.notification {
+  flex-grow: 0;
+  justify-content: space-around;
+  min-width: 110px;
+  max-width: 110px;
+  background-color: var(--game-notification-bgColor);
+  border-radius: var(--game-form-borderRadius);
+  box-shadow: var(--game-notification-bgShadow, 0 1px 4px rgba(0, 0, 0, 0.6));
+}
+.notification button {
+  color: white;
+  align-self: center;
+  min-height: 60px;
+  min-width: 60px;
+  transition: all 0.2s ease, visibility 0s;
+  border: 0px solid #ae633f;
+  border-radius: 200px;
+  box-shadow: 0 0 19px -8px black;
+  background-image: url("../../../../assets/img/game/emoji/icons8-alarme-60.png");
+  background-position: center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.notification button:before {
+  content: "1";
+  width: 15px;
+  height: 15px;
+  background-color: #f53737;
+  border-radius: 15px 15px 15px 15px;
+  top: 5px;
+  right: 12px;
+  position: absolute;
+}
+
+.header {
+  justify-content: space-between;
+}
+
+.action {
+  margin-bottom: 25px;
+  min-height: 500px;
+}
+.action .title-action {
+  align-self: center;
+  margin-top: -3px;
+  width: 50%;
+}
+.action .title-action h2 {
+  padding: 5px;
+  color: var(--game-groupAction-titleColor);
+  flex: 1;
+  text-align: center;
+  align-self: center;
+}
+.action .list-cards {
+  justify-content: center;
+  margin-top: 50px;
+}
+.action .list-cards .card {
+  max-width: 250px;
+  flex: 1;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.action .list-cards .card .mainContent {
+  border-radius: 15px 15px 0 0;
+  background: var(--game-card-mainContent-BgColor);
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.action .list-cards .card .mainContent img {
+  text-align: center;
+  width: 30%;
+}
+.action .list-cards .card .title {
+  font-weight: bold;
+  color: var(--game-card-title-Color);
+  background-color: var(--game-card-title-BgColor);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  border-radius: 0 0 15px 15px;
+}
+
+.vehicules {
+  margin-bottom: 25px;
+  max-height: 50%;
+}
+.vehicules .list-slides {
+  position: absolute;
+}
+.vehicules:hover .list-slides {
+  transition: all 0.25s ease;
+  opacity: 0;
+  height: 0;
+  cursor: none;
+}
+.vehicules:hover .header .container-custom {
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+.vehicules:hover .header .container-reference {
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+.vehicules:hover .group-upgrade {
+  min-height: 100px;
+  background-color: white;
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+.vehicules:hover .group-upgrade button {
+  opacity: 1;
+}
+.vehicules .header div {
+  flex: 1;
+}
+.vehicules .header .container-custom {
+  margin-left: 10px;
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+.vehicules .header .container-custom .group-custom:first-child {
+  margin-bottom: -20px;
+}
+.vehicules .header .container-custom .group-custom .custom {
+  justify-content: center;
+  cursor: pointer;
+  max-width: 35px;
+  max-height: 13px;
+  margin-right: 10px;
+  margin-top: 10px;
+  transition: all 0.75s ease;
+}
+.vehicules .header .container-custom .group-custom .custom > div {
+  width: 100px;
+  padding-bottom: 3px;
+  transform: scaleY(0.125);
+}
+.vehicules .header .container-custom .group-custom .custom p {
+  transition: all 0.75s ease;
+  flex: 1;
+  align-self: center;
+  text-align: center;
+  display: none;
+  transform: rotate(-90deg);
+}
+.vehicules .header .container-custom .group-custom .custom:hover {
+  z-index: 2;
+  align-items: center;
+  max-width: 35px;
+  background-color: white;
+  transform: scaleY(10);
+  transform-origin: top;
+}
+.vehicules .header .container-custom .group-custom .custom:hover p {
+  display: inline-flex;
+}
+.vehicules .header .container-custom .group-custom .choc {
+  background-color: yellow;
+}
+.vehicules .header .container-custom .group-custom .teinte {
+  background-color: blue;
+}
+.vehicules .header .container-custom .group-custom .aileron {
+  background-color: red;
+}
+.vehicules .header .container-custom .group-custom .jantes {
+  background-color: limegreen;
+}
+.vehicules .header .container-reference {
+  opacity: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  transition: all 0.5s ease;
+}
+.vehicules .header .container-reference .reference {
+  position: absolute;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: white;
+  justify-content: center;
+  transition: all 0.75s ease;
+  width: 12px;
+  min-height: 75px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.vehicules .header .container-reference .reference p {
+  transition: all 1.5s ease;
+  align-self: center;
+  opacity: 0;
+}
+.vehicules .header .container-reference .reference:hover {
+  width: 10%;
+  border-radius: 15px 0px 0px 15px;
+}
+.vehicules .header .container-reference .reference:hover p {
+  opacity: 1;
+}
+.vehicules .header .title-vehicule {
+  margin-top: -3px;
+}
+.vehicules .header .title-vehicule h2 {
+  padding: 5px;
+  color: var(--game-groupAction-titleColor);
+  flex: 1;
+  text-align: center;
+  align-self: center;
+}
+.vehicules .vehicule .arrow {
+  cursor: pointer;
+  color: var(--game-vehicule-arrowColor);
+  font-size: 60px;
+  text-decoration: none;
+  flex: 1;
+  text-align: center;
+  align-self: center;
+  transition: color 0.25s ease-in;
+}
+.vehicules .vehicule .arrow:hover {
+  color: var(--game-vehicule-arrowHoverColor);
+}
+.vehicules .vehicule .vehiculeImg {
+  max-height: 90%;
+  max-width: 80%;
+  flex: 2;
+}
+.vehicules .group-upgrade {
+  min-height: 70px;
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+  border-radius: 0px 0px 5px 5px;
+}
+.vehicules .group-upgrade button {
+  opacity: 0;
+  align-self: center;
+  min-height: 50px;
+  text-transform: uppercase;
+  max-width: 200px;
+  flex: 1;
+  text-align: center;
+  align-self: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 50%;
+  font-size: 18px;
+  border: 2px solid black;
+  border-radius: var(--game-house-btnBorderRadius);
+  cursor: pointer;
+  transition: all 0.25s ease-in;
+}
+.vehicules .group-upgrade button:hover {
+  filter: brightness(85%);
+}
+.vehicules .group-upgrade .reparer {
+  background-color: grey;
+}
+.vehicules .group-upgrade .ameilorer {
+  background-color: red;
+}
+.vehicules .group-upgrade .customiser {
+  background-color: yellow;
+}
+.vehicules .group-upgrade .vendre {
+  background-color: limegreen;
+}
+
+.houses {
+  border: 2px solid var(--game-groupAction-borderColor);
+  height: 50px;
+  min-height: 100px;
+}
+.houses .title-houses {
+  height: 100%;
+  flex-grow: 1;
+  border-radius: var(--game-house-titleBorderRadius);
+  background-color: var(--game-groupAction-titleBgColor);
+}
+.houses .title-houses h2 {
+  color: var(--game-groupAction-h2Color);
+  flex: 1;
+  text-align: center;
+  align-self: center;
+}
+.houses .group-btn {
+  display: flex;
+  flex-grow: 2;
+  justify-content: space-around;
+}
+.houses .group-btn button {
+  flex: 1;
+  text-align: center;
+  align-self: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 50%;
+  font-size: 18px;
+  background-color: var(--game-house-btnBgColor);
+  color: var(--game-house-btnColor);
+  border-radius: var(--game-house-btnBorderRadius);
+  border-radius: var(--game-house-btnBorderRadius);
+  cursor: pointer;
+  transition: all 0.25s ease-in;
+}
+.houses .group-btn button:first-child {
+  margin-left: 30px;
+}
+.houses .group-btn button:last-child {
+  margin-right: 30px;
+}
+.houses .group-btn button:hover {
+  filter: brightness(85%);
+}
+
+.groupAction {
+  flex: 1;
+  margin-right: 25px;
+}
+.groupAction .list-slides {
+  flex-grow: 1;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.groupAction .list-slides .slide {
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 15px;
+  height: 15px;
+  background-color: var(--game-groupAction-slideColor);
+  border-radius: 100%;
+}
+.groupAction .list-slides .active {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--game-groupAction-slideColor);
+  background-color: var(--game-groupAction-slideActiveColor);
+}
+
+.fuel {
+  /* TODO BEHAVIOR MODIFY SPEED WAVE WHEN MOVE AND NOT HOUSE OVER
+  ANIMATION RANDOM NUMBER WHEN MOVE AND NOT HOUSE OVER 
+  **/
+  flex-grow: 0;
+  width: 36px;
+  overflow: hidden;
+  background-color: var(--game-fuel-bgcolor);
+  border: 2px solid var(--game-fuel-borderColor);
+  border-radius: var(--game-form-borderRadius);
+}
+.fuel:hover .fuelActive {
+  transform: translate(0px, 1280px);
+}
+.fuel:hover .fuelActive::before {
+  animation: waveAnimation 1s linear infinite;
+}
+.fuel .fuelActive {
+  display: flex;
+  justify-content: center;
+  width: 34px;
+  transform: translate(0px, 550px);
+  background-image: linear-gradient(red, yellow, green);
+  transition: transform 2s ease-in;
+}
+.fuel .fuelActive:before {
+  content: "";
+  width: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 40px;
+  transform: translate(-50%, -75%);
+  background: #000;
+  animation: waveAnimation 5s linear infinite;
+  border-radius: 45%;
+}
+@keyframes waveAnimation {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+.fuel .percentage {
+  display: flex;
+  align-self: center;
+  text-align: center;
+  margin-bottom: 600px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 0;
+  transform: rotate(-90deg);
+}
+
+/** IMPORT GLOBAL CSS FOR FONTS HTML,* SELECTOR **/
+/** IMPORT VARIABLES used only for this game **/
+/** IMPORT PLACEHOLDER used only for this game **/
+/** SCSS Used inside #game */
+/** SCSS used inside groupAction Folder **/
+/** SCSS used inside Fuel Folder **/
+/* @import "_responsive.scss" 
+*/
+#game {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
+  transition: all 0.25s ease;
+}
+@media (min-width: 1400px) {
+  #game {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+@media (min-width: 2000px) {
+  #game {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+#game .interaction {
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+/*# sourceMappingURL=style.css.map */

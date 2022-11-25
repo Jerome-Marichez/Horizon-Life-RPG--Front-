@@ -2,7 +2,7 @@
 @use "_discord.scss"; // Discord Header
 @use "_notification.scss"; // Notification Icon
 
-.player {
+.header {
 	@extend %flexRow;
 	justify-content: space-between;
 }

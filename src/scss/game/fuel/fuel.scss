@@ -11,17 +11,17 @@
 	width: 36px;
 
 	overflow: hidden;
-	background-color: var(--game-fuel-bgcolor);
+	background-color: var(--game-fuel-bgColor);
 	border: 2px solid var(--game-fuel-borderColor);
 	border-radius: var(--game-form-borderRadius);
 
 	&:hover {
 		.fuelActive {
 			transform: translate(0px, 1280px);
-		}
 
-		.fuelActive::before {
-			animation: waveAnimation 1s linear infinite;
+			&:before {
+				animation: waveAnimation 1s linear infinite;
+			}
 		}
 	}
 
@@ -31,7 +31,7 @@
 
 		width: 34px;
 		transform: translate(0px, 550px);
-		background-image: linear-gradient(red, yellow, green);
+		background-image: linear-gradient(--game-fuel-gradientColor);
 		transition: transform 2s ease-in;
 
 		&:before {

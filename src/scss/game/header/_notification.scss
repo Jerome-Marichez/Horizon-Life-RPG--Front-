@@ -13,13 +13,11 @@
 
 
 	button {
-		color: white;
+		color: --game-notificationNumber-Color;
 		align-self: center;
 		min-height: 60px;
 		min-width: 60px;
-		transition: all 0.2s ease,
-		visibility 0s;
-		border: 0px solid rgb(174, 99, 63);
+		transition: all 0.2s ease;
 		border-radius: 200px;
 		box-shadow: 0 0 19px -8px black;
 		background-image: url("../../../../assets/img/game/emoji/icons8-alarme-60.png");
@@ -32,12 +30,12 @@
 			content: '1';
 			width: 15px;
 			height: 15px;
-			background-color: rgb(245, 55, 55);
+			background-color: --game-notificationNumber-Color;
 			border-radius: 15px 15px 15px 15px;
 			top: 5px;
 			right: 12px;
-			
-			position:absolute;
+
+			position: absolute;
 		}
 
 

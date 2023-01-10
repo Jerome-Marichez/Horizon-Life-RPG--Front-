@@ -27,6 +27,8 @@ body {
   --game-discord-h1Color: white;
   --game-notification-bgShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
   --game-notification-bgColor: White;
+  --game-notificationNumber-Color: white;
+  --game-notificationNumber-BgColor: rgb(245, 55, 55);
   --game-groupAction-bgColor: #2A2A2A;
   --game-groupAction-borderColor: #575EDC;
   --game-groupAction-boxShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
@@ -40,12 +42,24 @@ body {
   --game-card-title-Color: black;
   --game-vehicule-arrowColor: white;
   --game-vehicule-arrowHoverColor: grey;
+  --game-vehicule-choc: yellow;
+  --game-vehicule-teinte: blue;
+  --game-vehicule-aileron: red;
+  --game-vehicule-jantes: limegreen;
+  --game-vehicule-referenceBgColor: white;
+  --game-vehicule-groupUgradeBgColor: white;
+  --game-vehicule-groupUpgradeBtnBorderColor: black;
+  --game-vehicule-reparer: grey;
+  --game-vehicule-ameilorer: red;
+  --game-vehicule-customiser: yellow;
+  --game-vehicule-vendre: limegreen;
   --game-house-titleBorderRadius: 8px 60px 60px 8px;
   --game-house-btnBgColor: white;
   --game-house-btnColor: black;
   --game-house-btnBorderRadius: 25px;
   --game-fuel-borderColor: black;
-  --game-fuel-bgcolor: black;
+  --game-fuel-bgColor: black;
+  --game-fuel-gradientColor: red, yellow, green;
 }
 
 #game .interaction, .fuel, .groupAction .list-slides, .houses, .houses .title-houses, .vehicules .header, .vehicules .header .container-custom .group-custom, .vehicules .header .title-vehicule, .vehicules .vehicule, .action .title-action, .action .list-cards, .header, .notification, .discord {
@@ -97,12 +111,11 @@ body {
   box-shadow: var(--game-notification-bgShadow, 0 1px 4px rgba(0, 0, 0, 0.6));
 }
 .notification button {
-  color: white;
+  color: --game-notificationNumber-Color;
   align-self: center;
   min-height: 60px;
   min-width: 60px;
-  transition: all 0.2s ease, visibility 0s;
-  border: 0px solid #ae633f;
+  transition: all 0.2s ease;
   border-radius: 200px;
   box-shadow: 0 0 19px -8px black;
   background-image: url("../../../../assets/img/game/emoji/icons8-alarme-60.png");
@@ -115,7 +128,7 @@ body {
   content: "1";
   width: 15px;
   height: 15px;
-  background-color: #f53737;
+  background-color: --game-notificationNumber-Color;
   border-radius: 15px 15px 15px 15px;
   top: 5px;
   right: 12px;
@@ -196,7 +209,7 @@ body {
 }
 .vehicules:hover .group-upgrade {
   min-height: 100px;
-  background-color: white;
+  background-color: --game-vehicule-groupUgradeBgColor;
   transition: all 0.5s ease;
   opacity: 1;
 }
@@ -249,16 +262,16 @@ body {
   display: inline-flex;
 }
 .vehicules .header .container-custom .group-custom .choc {
-  background-color: yellow;
+  background-color: --game-vehicule-choc;
 }
 .vehicules .header .container-custom .group-custom .teinte {
-  background-color: blue;
+  background-color: --game-vehicule-teinte;
 }
 .vehicules .header .container-custom .group-custom .aileron {
-  background-color: red;
+  background-color: --game-vehicule-aileron;
 }
 .vehicules .header .container-custom .group-custom .jantes {
-  background-color: limegreen;
+  background-color: --game-vehicule-jantes;
 }
 .vehicules .header .container-reference {
   opacity: 0;
@@ -270,7 +283,7 @@ body {
   position: absolute;
   margin-top: 10px;
   margin-right: 10px;
-  background-color: white;
+  background-color: --game-vehicule-referenceBgColor;
   justify-content: center;
   transition: all 0.75s ease;
   width: 12px;
@@ -339,7 +352,7 @@ body {
   margin-right: 15px;
   height: 50%;
   font-size: 18px;
-  border: 2px solid black;
+  border: 2px solid --game-vehicule-groupUpgradeBtnBorderColor;
   border-radius: var(--game-house-btnBorderRadius);
   cursor: pointer;
   transition: all 0.25s ease-in;
@@ -440,14 +453,14 @@ body {
   flex-grow: 0;
   width: 36px;
   overflow: hidden;
-  background-color: var(--game-fuel-bgcolor);
+  background-color: var(--game-fuel-bgColor);
   border: 2px solid var(--game-fuel-borderColor);
   border-radius: var(--game-form-borderRadius);
 }
 .fuel:hover .fuelActive {
   transform: translate(0px, 1280px);
 }
-.fuel:hover .fuelActive::before {
+.fuel:hover .fuelActive:before {
   animation: waveAnimation 1s linear infinite;
 }
 .fuel .fuelActive {
@@ -455,7 +468,7 @@ body {
   justify-content: center;
   width: 34px;
   transform: translate(0px, 550px);
-  background-image: linear-gradient(red, yellow, green);
+  background-image: linear-gradient(--game-fuel-gradientColor);
   transition: transform 2s ease-in;
 }
 .fuel .fuelActive:before {

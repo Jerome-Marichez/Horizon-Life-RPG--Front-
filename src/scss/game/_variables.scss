@@ -14,6 +14,8 @@
 	// Used by Notification inside Player Area 
 	--game-notification-bgShadow: 0 5.00px 17px 4px rgba(20, 20, 20, 0.47);
 	--game-notification-bgColor: White;
+	--game-notificationNumber-Color: white; 
+	--game-notificationNumber-BgColor: rgb(245, 55, 55);
 	// END PLAYER AREA // 
 
 
@@ -42,6 +44,22 @@
 	// VEHICULES AREA // 
 	--game-vehicule-arrowColor: white;
 	--game-vehicule-arrowHoverColor: grey;
+
+
+	--game-vehicule-choc: yellow;
+	--game-vehicule-teinte: blue;
+	--game-vehicule-aileron: red;
+	--game-vehicule-jantes: limegreen;
+
+	--game-vehicule-referenceBgColor: white;
+
+	--game-vehicule-groupUgradeBgColor: white;
+	--game-vehicule-groupUpgradeBtnBorderColor: black;
+
+	--game-vehicule-reparer: grey;
+	--game-vehicule-ameilorer: red;
+	--game-vehicule-customiser: yellow;
+	--game-vehicule-vendre: limegreen;
 	// END VEHICULES AREA//
 
 
@@ -58,6 +76,7 @@
 
 	// FUEL AREA //  
 	--game-fuel-borderColor: black;
-	--game-fuel-bgcolor: black;
+	--game-fuel-bgColor: black;
+	--game-fuel-gradientColor: red, yellow, green;
 	// END FUEL AREA // 
 }

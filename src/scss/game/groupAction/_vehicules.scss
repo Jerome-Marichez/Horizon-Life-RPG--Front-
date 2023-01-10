@@ -32,7 +32,7 @@
 
 		.group-upgrade {
 			min-height: 100px;
-			background-color: white;
+			background-color: --game-vehicule-groupUgradeBgColor;
 			transition: all 0.5s ease;
 			opacity: 1;
 
@@ -114,19 +114,19 @@
 
 
 				.choc {
-					background-color: yellow;
+					background-color: --game-vehicule-choc;
 				}
 
 				.teinte {
-					background-color: blue;
+					background-color: --game-vehicule-teinte;
 				}
 
 				.aileron {
-					background-color: red;
+					background-color: --game-vehicule-aileron;
 				}
 
 				.jantes {
-					background-color: limegreen;
+					background-color: --game-vehicule-jantes;
 				}
 
 
@@ -149,7 +149,7 @@
 				position: absolute;
 				margin-top: 10px;
 				margin-right: 10px;
-				background-color: white;
+				background-color: --game-vehicule-referenceBgColor;
 				justify-content: center;
 				transition: all 0.75s ease;
 				width: 12px;
@@ -246,7 +246,7 @@
 			margin-right: 15px;
 			height: 50%;
 			font-size: 18px;
-			border: 2px solid black;
+			border: 2px solid --game-vehicule-groupUpgradeBtnBorderColor;
 			border-radius: var(--game-house-btnBorderRadius);
 			cursor: pointer;
 			transition: all 0.25s ease-in;
